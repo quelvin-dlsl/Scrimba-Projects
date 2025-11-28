@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div class="container">
+            <div>
+                <h3>HOME</h3>
+                <h2 class="score" id="home-el">0</h2>
+                <div>
+                    <button onclick="home_add1point()">+1</button>
+                    <button onclick="home_add2point()">+2</button>
+                    <button onclick="home_add3point()">+3</button>
+                </div>
+            </div>
+            <div>
+                <h3>QUARTER</h3>
+                <h3 class="quarter" id="qtr-el"> 1 </h3>
+                <div class="qtr-container">
+                    <button class="qtr-btn" onclick="firstQuarter()">1</button>
+                    <button class="qtr-btn" onclick="secondQuarter()">2</button>
+                    <button class="qtr-btn" onclick="thirdQuarter()">3</button>
+                    <button class="qtr-btn" onclick="fourthQuarter()">4</button>
+                </div>
+                <button class="reset-btn" onclick="reset()">RESET</button>
+            </div>
+            <div>
+                <h3>GUEST</h3>
+                <h2 class="score" id="guest-el">0</h2>
+                <div>
+                    <button onclick="guest_add1point()">+1</button>
+                    <button onclick="guest_add2point()">+2</button>
+                    <button onclick="guest_add3point()">+3</button>
+                </div>
+            </div>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>
