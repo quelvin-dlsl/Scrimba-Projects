@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    background: #1F2937;
+}
+
+h1 {
+    font-family: "Karla", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 40px;
+    letter-spacing: -2.5%;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+hr {
+    border: 1px solid #2F3E53;
+    margin-top: 39px;
+    margin-bottom: 39px;
+}
+
+.supporting-text {
+    font-family: "Inter", sans-serif;
+    /* font-size: 20px; */
+    font-weight: 400;
+    line-height: 28px;
+    color: #D5D4D8;
+    letter-spacing: 0;
+    margin-bottom: auto;
+    margin-top: auto;
+    font-style: normal;
+}
+
+.generate {
+    color: white;
+}
+
+.random {
+    color: #10B981;
+}
+
+.container {
+    display: block;
+    margin-top: 110px;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 550px;
+    height: 350px;
+}
+
+.container-block {
+    display: flex;
+}
+
+.password-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 111px;
+    height: 19px;
+    margin-right: 10px;
+    margin-left: 10px;
+    background: #2F3E53;
+    border-radius: 6px;
+    width: 515px;
+    height: 30px;
+    padding: 9px 16px;
+}
+
+.password {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.pass-generated {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-style: medium;
+    line-height: 32px;
+    color: #55F991;
+
+}
+
+#btn-generate-pass{
+    font-family: "Inter", sans-serif;
+    width: 191px;
+    height: 42px;
+    margin-top: 64px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    padding: 9px 14px;
+    background: #10B981;
+    color: white;
+    font-size: 15px;
+}
+
+#btn-generate-pass:hover{
+     font-family: "Inter", sans-serif;
+    width: 191px;
+    height: 42px;
+    margin-top: 64px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    padding: 9px 14px;
+    background: #2ddaa0;
+    color: white;
+    font-size: 15px;
+}
