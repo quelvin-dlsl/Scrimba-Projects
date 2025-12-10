@@ -24,6 +24,9 @@ const mass = document.getElementById("mass")
 
 convertBtn.addEventListener('click', function(){
     let num = inputValue.value
+    length.innerHTML = "<h3>Length (Meter/Feet)</h3>"
+    volume.innerHTML = "<h3>Volume (Liters/Gallons)</h3>"
+    mass.innerHTML = "<h3>Mass (Kilograms/Pounds)</h3>"
     let convertLength = ""
     let convertVolume = ""
     let convertMass = ""
