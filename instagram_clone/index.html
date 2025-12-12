@@ -1,6 +1,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="index.css">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     </head>
     <body>
         <header>
@@ -11,11 +12,13 @@
         </header>
 
         <main>
-            <div class="container">
+            <section class="container">
                 <div class="post-header">
                     <img id="post-avatar" src="images/avatar-vangogh.jpg">
-                    <h3 id="post-username">Vincent van Gogh</h3>
-                    <p id="post-location">Zundert, Netherlands</p>
+                    <div class="block">
+                        <h3 id="post-username">Vincent van Gogh</h3>
+                        <p id="post-location">Zundert, Netherlands</p>
+                    </div>
                 </div>
                 <img id="post-image" src="images/post-vangogh.jpg">
                 <div class="post-footer">
@@ -28,7 +31,7 @@
                     <!-- caption? -->
                     <p id="comment"></p>
                 </div>
-            </div>
+            </section>
         </main>
 
         <script src="index.js"></script>
