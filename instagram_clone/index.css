@@ -4,6 +4,11 @@ html, body {
     font-family: 'Source Sans 3', sans-serif;
 }
 
+main {
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
 h3, p {
     font-size: 1rem;
 }
@@ -86,6 +91,10 @@ header {
 .post-icons img {
     margin-top: 1.25rem;
     width: 36px;
+}
+
+.post-icons img:hover{
+    opacity: 50%;
 }
 
 
