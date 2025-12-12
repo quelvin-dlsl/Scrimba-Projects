@@ -3,7 +3,32 @@
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
-        <img src="images/logo.png">
+        <header>
+            <img src="images/logo.png">
+            <img id="user-profile-pic" src="images/user-avatar.png">
+        </header>
+
+        <main>
+            <div class="container">
+                <div class="post-header">
+                    <img id="post-avatar" src="images/avatar-vangogh.jpg">
+                    <h3 id="post-username">Vincent van Gogh</h3>
+                    <p id="post-location">Zundert, Netherlands</p>
+                </div>
+                <img id="post-image" src="images/post-vangogh.jpg">
+                <div class="post-footer">
+                    <div class="post-icons">
+                        <img id="like-icon" src="images/icon-heart.png">
+                        <img id="comment-icon" src="images/icon-comment.png">
+                        <img id="dm-icon" src="images/icon-dm.png">
+                    </div>
+                    <p id="num-likes">21,492 likes</p>
+                    <!-- caption? -->
+                    <p id="comment"></p>
+                </div>
+            </div>
+        </main>
+
         <script src="index.js"></script>
     </body>
 </html>
