@@ -89,13 +89,17 @@ header {
     justify-content: space-between;
 }
 
-.post-icons img {
+.post-icons i {
     margin-top: 1.25rem;
-    width: 36px;
+    font-size: 2rem;
 }
 
-.post-icons img:hover{
+.post-icons i:hover{
     opacity: 50%;
+}
+
+.liked {
+    color: red;
 }
 
 
