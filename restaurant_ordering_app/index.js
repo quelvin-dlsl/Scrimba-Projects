@@ -16,12 +16,17 @@ document.addEventListener('click',function(e){
         } else if(e.target.classList.contains('complete-order-btn')){
             document.querySelector('.modal').classList.remove('hidden')
             renderModal()
+
             setupFormValidation()
+
+            disableCompleteOrderButton()
         } else if(e.target.classList.contains('pay-btn')){
             e.preventDefault()
             handlePayment()
         } else if(e.target.classList.contains('modal')){
             e.target.classList.add('hidden')
+
+            enableCompleteOrderButton()
         }
 
 })
@@ -32,6 +37,24 @@ document.addEventListener('click', function(e){
         e.stopPropagation()
     }
 })
+
+function disableCompleteOrderButton() {
+    const completeBtn = document.getElementById('complete-order-btn')
+    if (completeBtn) {
+        completeBtn.disabled = true
+        completeBtn.style.opacity = '0.5'
+        completeBtn.style.cursor = 'not-allowed'
+    }
+}
+
+function enableCompleteOrderButton() {
+    const completeBtn = document.getElementById('complete-order-btn')
+    if (completeBtn) {
+        completeBtn.disabled = false
+        completeBtn.style.opacity = '1'
+        completeBtn.style.cursor = 'pointer'
+    }
+}
 
 function setupFormValidation(){
     const nameInput = document.getElementById('name')
@@ -102,14 +125,15 @@ function handlePayment() {
     // Hide modal
     document.querySelector('.modal').classList.add('hidden')
 
+    enableCompleteOrderButton()
+
     // Clear orders
     orders = []
 
     // Display thank you message
     document.getElementById('order').innerHTML = `
         <div class="thank-you-message">
-            <h2>Thank you ${customerName} for purchasing!</h2>
-            <p>Your order is being processed.</p>
+            <h2>Thanks, ${customerName}! Your order is on its way!</h2>
         </div>
     `
 }
