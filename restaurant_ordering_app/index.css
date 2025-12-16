@@ -153,6 +153,32 @@ header {
 }
 
 
+/* ORDER SUMMARY */
+
+.order-menu {
+    display: block;
+}
+
+.order-heading {
+    text-align: center;
+}
+
+.order-list {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+/* .total-price {
+    display: flex;
+} */
+
+.complete-order-btn {
+    display: block;
+    margin: 0 auto;
+}
+
+
 
 
 

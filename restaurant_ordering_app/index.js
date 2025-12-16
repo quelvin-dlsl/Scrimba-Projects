@@ -9,9 +9,27 @@ document.addEventListener('click',function(e){
 
             orders.push(item)
             renderOrder()
+        } else if(e.target.classList.contains('remove-btn')){
+            const itemToRemove = e.target.dataset.remove
+            console.log(`${itemToRemove} removed`)
+
+            handleRemoveClick(itemToRemove)
+            renderOrder()
         }
 
 })
+
+function handleRemoveClick(item){
+    const index = orders.indexOf(item)
+
+    if(index > -1) {
+        orders.splice(index, 1)
+    }
+
+    if(orders.length === 0){
+        document.getElementById('order').innerHTML = ''
+    }
+}
 
 
 function getOrderHtml() {
@@ -30,32 +48,31 @@ function getOrderHtml() {
         const count = itemCounts[itemName]
 
         const menuItem = menuArray.find(item => item.name === itemName)
-        const itemPrice = menuItem ? menuItem.price : 0
+        const itemPrice = menuItem ? menuItem.price : 0 //If item exist
         const lineTotal = itemPrice * count
 
         totalPrice += lineTotal
 
-        orderItemsHtml += `<li id="${itemName}-item">${itemName} x${count}</li>`
+        orderItemsHtml += `<li id="${itemName}-item">${itemName} x${count}</li>
+                            <button class="remove-btn" id="remove-btn" data-remove="${itemName}">remove</button>`
         orderPricesHtml += `<li>$${lineTotal}</li>`
     }
 
     const orderHtml = `<div class="order-menu" id="order-menu">
-                    <h2 class="order-heading"> Your order </h2>
-                    <ul id="order-list-name">
-                        ${orderItemsHtml}
-                    </ul>
-                    <ul id="order-list-price">
-                        ${orderPricesHtml}
-                    </ul>
-                    <p class="total-price" id="total-price">Total price: $${totalPrice}</p>
-                    <button class="complete-order-btn" id="complete-order-btn">Complete order</button>
-                </div>
+                            <h2 class="order-heading"> Your order </h2>
+                            <div class="order-list">
+                                <ul id="order-list-name">
+                                    ${orderItemsHtml}
+                                </ul>
+                                <ul id="order-list-price">
+                                    ${orderPricesHtml}
+                                </ul>
+                            </div>
+                            <p class="total-price" id="total-price">Total price: $${totalPrice}</p>
+                            <button class="complete-order-btn" id="complete-order-btn">Complete order</button>
+                        </div>
                 `
     return orderHtml
-}
-
-function countOccurrences(item) {
-    return orders.filter(order => order === item).length
 }
 
 function renderOrder(){
