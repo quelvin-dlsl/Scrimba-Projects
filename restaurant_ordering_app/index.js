@@ -53,8 +53,8 @@ function getOrderHtml() {
 
         totalPrice += lineTotal
 
-        orderItemsHtml += `<li id="${itemName}-item">${itemName} x${count}</li>
-                            <button class="remove-btn" id="remove-btn" data-remove="${itemName}">remove</button>`
+        orderItemsHtml += `<div class="list-remove-style"><li id="${itemName}-item">${itemName} x${count}</li>
+                            <button class="remove-btn" id="remove-btn" data-remove="${itemName}">remove</button></div>`
         orderPricesHtml += `<li>$${lineTotal}</li>`
     }
 
@@ -68,7 +68,8 @@ function getOrderHtml() {
                                     ${orderPricesHtml}
                                 </ul>
                             </div>
-                            <p class="total-price" id="total-price">Total price: $${totalPrice}</p>
+                            <hr>
+                            <p class="total-price" id="total-price"><span>Total price:</span> <span>$${totalPrice}</span></p>
                             <button class="complete-order-btn" id="complete-order-btn">Complete order</button>
                         </div>
                 `

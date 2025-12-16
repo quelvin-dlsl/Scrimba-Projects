@@ -157,10 +157,24 @@ header {
 
 .order-menu {
     display: block;
+    padding: 30px;
+}
+
+.order-menu ul{
+    list-style-type: none;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
 }
 
 .order-heading {
     text-align: center;
+    font-weight: 400;
+}
+
+#order-list-name {
+    display: block;
+    padding: 0;
 }
 
 .order-list {
@@ -169,13 +183,54 @@ header {
 
 }
 
-/* .total-price {
+.total-price {
     display: flex;
-} */
+    justify-content: space-between;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+}
 
 .complete-order-btn {
     display: block;
     margin: 0 auto;
+    width: 100%;
+    padding: 17px 0;
+
+    font-weight: bold;
+    font-size: 1rem;
+    color: white;
+
+    background: #16DB99;
+    border: 1px solid #16DB99;
+    border-radius: 3px;
+}
+
+.complete-order-btn:hover {
+    opacity: 60%;
+}
+
+.list-remove-style{
+    display: flex;
+    justify-content: space-between;
+}
+
+.remove-btn{
+    margin-left: 15px;
+    border: 0;
+    background: inherit;
+    color: #BBBBBB;
+    border-radius: 3px;
+}
+
+hr{
+    border: solid black;
+    border-width: 1px;
+}
+
+.remove-btn:hover {
+    background: rgb(179, 179, 179);
+    color: black;
 }
 
 
