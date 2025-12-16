@@ -5,19 +5,114 @@ let orders = []
 document.addEventListener('click',function(e){
         if(e.target.classList.contains('add-to-order')){
             const item = e.target.dataset.name
-            console.log(`${item} clicked`)
 
             orders.push(item)
             renderOrder()
         } else if(e.target.classList.contains('remove-btn')){
             const itemToRemove = e.target.dataset.remove
-            console.log(`${itemToRemove} removed`)
 
             handleRemoveClick(itemToRemove)
             renderOrder()
+        } else if(e.target.classList.contains('complete-order-btn')){
+            document.querySelector('.modal').classList.remove('hidden')
+            renderModal()
+            setupFormValidation()
+        } else if(e.target.classList.contains('pay-btn')){
+            e.preventDefault()
+            handlePayment()
+        } else if(e.target.classList.contains('modal')){
+            e.target.classList.add('hidden')
         }
 
 })
+
+// Prevent clicks inside modal content from closing modal
+document.addEventListener('click', function(e){
+    if(e.target.closest('#modal-content')){
+        e.stopPropagation()
+    }
+})
+
+function setupFormValidation(){
+    const nameInput = document.getElementById('name')
+    const cardInput = document.getElementById('card-number')
+    const cvvInput = document.getElementById('cvv')
+    const payBtn = document.getElementById('pay-btn')
+
+    // Validate name - only letters and spaces
+    nameInput.addEventListener('input', function(e) {
+        // Remove any non-letter characters (except spaces)
+        this.value = this.value.replace(/[^a-zA-Z\s]/g, '')
+        checkFormValidity()
+    })
+
+     // Validate card number - format as ####-####-####-####
+    cardInput.addEventListener('input', function(e) {
+        // Remove all non-digits
+        let value = this.value.replace(/\D/g, '')
+
+        // Limit to 16 digits
+        value = value.substring(0, 16)
+
+        // Add dashes every 4 digits
+        let formatted = value.match(/.{1,4}/g)?.join('-') || value
+
+        this.value = formatted
+        checkFormValidity()
+    })
+
+    // Validate CVV - limit to 3 digits
+    cvvInput.addEventListener('input', function(e) {
+        // Only allow digits
+        this.value = this.value.replace(/\D/g, '')
+
+        // Limit to 3 characters
+        if (this.value.length > 3) {
+            this.value = this.value.substring(0, 3)
+        }
+        checkFormValidity()
+    })
+
+    function checkFormValidity() {
+        const nameValid = nameInput.value.trim().length > 0
+        const cardValid = cardInput.value.replace(/-/g, '').length === 16
+        const cvvValid = cvvInput.value.length === 3
+
+        // Enable or disable pay button based on all inputs being valid
+        if (nameValid && cardValid && cvvValid) {
+            payBtn.disabled = false
+            payBtn.style.opacity = '1'
+            payBtn.style.cursor = 'pointer'
+        } else {
+            payBtn.disabled = true
+            payBtn.style.opacity = '0.5'
+            payBtn.style.cursor = 'not-allowed'
+        }
+    }
+
+    // Initial check
+    checkFormValidity()
+
+}
+
+function handlePayment() {
+    const nameInput = document.getElementById('name')
+    const customerName = nameInput.value.trim()
+
+    // Hide modal
+    document.querySelector('.modal').classList.add('hidden')
+
+    // Clear orders
+    orders = []
+
+    // Display thank you message
+    document.getElementById('order').innerHTML = `
+        <div class="thank-you-message">
+            <h2>Thank you ${customerName} for purchasing!</h2>
+            <p>Your order is being processed.</p>
+        </div>
+    `
+}
 
 function handleRemoveClick(item){
     const index = orders.indexOf(item)
@@ -82,6 +177,22 @@ function renderOrder(){
     document.getElementById('order').innerHTML = getOrderHtml()
 }
 
+function getModalHtml(){
+    const modalHtml = `<h2> Enter card details</h2>
+                        <form>
+                            <input type="text" id="name" placeholder="Enter your name" required>
+                            <input type="text" id="card-number" placeholder="Enter card number" required>
+                            <input type="text" id="cvv" placeholder="Enter CVV" required>
+                            <button type="submit" class="pay-btn" id="pay-btn"> Pay </button>
+                        </form>
+                                `
+
+    return modalHtml
+}
+
+function renderModal(){
+    document.getElementById('modal-content').innerHTML = getModalHtml()
+}
 function getMenuHtml() {
     let menuHtml = ''
 
@@ -104,7 +215,3 @@ function render() {
 }
 
 render()
-
-console.log(getMenuHtml())
-
-console.log(getOrderHtml())

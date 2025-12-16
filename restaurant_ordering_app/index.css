@@ -234,6 +234,74 @@ hr{
 }
 
 
+/* MODAL */
+
+.modal {
+    border: 1px solid #ffffff;
+    border-radius: 3.89px;
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 500px;
+    padding: 30px;
+    background: white;
+
+    filter: drop-shadow(5.18654px 5.18654px 255.437px rgba(0, 0, 0, 0.90));
+}
+
+
+.modal-content {
+    background: white;
+    width: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+.modal-content h2{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    margin-top: 0;
+    padding-bottom: 45px;
+}
+
+.modal-content form{
+    display: block;
+}
+
+#name, #card-number, #cvv {
+    display: block;
+    width: 475px;
+    height: 72px;
+    margin: 10px auto;
+}
+
+#name::placeholder, #card-number::placeholder, #cvv::placeholder {
+    font-size: 20px;
+    text-indent: 20px;
+}
+
+.pay-btn{
+    display: block;
+    margin: 0 auto;
+    margin-top: 40px;
+    width: 483px;
+    padding: 16px 30px;
+
+    font-weight: bold;
+    font-size: 1rem;
+    color: white;
+
+    background: #16DB99;
+    border: 1px solid #16DB99;
+    border-radius: 3.89px;
+
+}
+
 
 
 
