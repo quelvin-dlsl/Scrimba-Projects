@@ -9,7 +9,7 @@ function getMenuHtml() {
                 <div class="item-details">
                     <h2 class="item-name"> ${items.name} </h2>
                     <p class="ingredients"> ${items.ingredients.map(ingredient => `${ingredient}`).join(', ')} </p>
-                    <p class="price"> ${items.price} </p>
+                    <p class="price"> ${'$' + items.price} </p>
                 </div>
                 <button class="add-to-order" id="add-to-order"> + </button>
             </div>`).join(''))

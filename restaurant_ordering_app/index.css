@@ -1,4 +1,5 @@
 body {
+    position: relative;
     margin: 0;
     font-family: 'Smythe', system-ui, sans-serif;
 }
@@ -14,6 +15,8 @@ header {
     border: 1px solid;
 }
 
+/* MENU CARD  */
+
 .menu-item-card {
     display: flex;
     margin: 0 auto;
@@ -21,6 +24,28 @@ header {
 
 .item-details {
     margin-right: auto;
+    margin-left: 50px;
+}
+
+.emoji {
+    font-family: 'Inter', sans-serif;
+    width: 70px;
+    height: 89px;
+    left: 46px;
+    top: 234px;
+
+    font-weight: 400;
+    font-size: 58.72px;
+    line-height: 98px;
+
+    align-items: start;
+    text-align: center;
+    letter-spacing: -0.02em;
+
+    margin-top: 5px;
+
+    color: #000000;
+
 }
 
 .item-name {
@@ -31,6 +56,8 @@ header {
     font-weight: 400;
     font-size: 28px;
     line-height: 17px;
+
+    margin-bottom: 5px;
 
     color: #000000;
 }
@@ -45,9 +72,53 @@ header {
     font-size: 16px;
     line-height: 24px;
 
+    margin-top: 5px;
+
     color: #8B8B8B;
 
 }
+
+.price {
+
+    width: 19px;
+    height: 24px;
+    left: 147px;
+    top: 299px;
+
+    font-family: 'Smythe';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #000000;
+
+}
+
+.add-to-order {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    text-align: center;
+
+    line-height: 1;
+
+    color: #3C3C3C;
+
+    background: white;
+    border-radius: 50%;
+    border: 3px solid #DEDEDE;
+
+    margin-top: 30px;
+}
+
 
 
 
