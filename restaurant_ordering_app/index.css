@@ -1,3 +1,55 @@
 body {
     margin: 0;
+    font-family: 'Smythe', system-ui, sans-serif;
 }
+
+header, .main {
+    display: block;
+    width: 600px;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url();
+    border: 1px solid;
+}
+
+.menu-item-card {
+    display: flex;
+    margin: 0 auto;
+}
+
+.item-details {
+    margin-right: auto;
+}
+
+.item-name {
+    width: 43px;
+    height: 17px;
+    left: 147px;
+    top: 241.2px;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 17px;
+
+    color: #000000;
+}
+
+.ingredients {
+    width: 358px;
+    height: 24px;
+    left: 147px;
+    top: 267px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+    color: #8B8B8B;
+
+}
+
+
+
+
+
