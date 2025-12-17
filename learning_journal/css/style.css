@@ -8,6 +8,19 @@ body {
     padding: 0;
 }
 
+body {
+    display: grid;
+    grid-template-columns: 1em 1fr 1em;
+    /* gap: 1em; */
+    grid-template-areas:
+        "... .... ..."
+        "... head ..."
+        "... hero ..."
+        "... cont ..."
+        "... foot ..."
+        "... .... ...";
+}
+
 /* MOBILE */
 
 /* --- HEADER --- */
@@ -82,6 +95,30 @@ nav a {
     color: white;
     font-family: 'Source Sans 3', sans-serif;
 
+}
+
+/* --- ARTICLE SECTION --- */
+
+.container {
+    margin-top: 2rem;
+    display: grid;
+    grid-area: cont;
+    grid-template-columns:1fr;
+    gap: 1em;
+    grid-template-areas:
+        "a1"
+        "a2"
+        "a3";
+}
+
+article {
+    height: 100%;
+}
+
+.article-preview {
+    width: 100%;
+    padding: 1em;
+    box-sizing: border-box;
 }
 
 .hero-section p, .hero-section h1 {
@@ -175,3 +212,44 @@ nav a {
         padding-bottom: 5rem;
     }
 }
+
+
+/* --- GRID --- */
+
+header {
+    grid-area: head;
+}
+
+.hero-section {
+    grid-area: hero;
+    grid-column: span 3;
+}
+
+footer {
+    grid-area: foot;
+}
+
+.article-one {
+    grid-area: a1;
+}
+
+.article-two {
+    grid-area: a2;
+}
+
+.article-three {
+    grid-area: a3;
+}
+
+.article-four {
+    grid-area: a4;
+}
+
+.article-five {
+    grid-area: a5;
+}
+
+.article-six {
+    grid-area: a6;
+}
+
