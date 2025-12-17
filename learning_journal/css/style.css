@@ -154,11 +154,6 @@ nav a {
     font-size: 0.75rem;
 }
 
-article {
-    display: flex;
-    flex-direction: column;
-}
-
 article img {
     width: 100%;
 }
@@ -173,7 +168,41 @@ article img {
     margin: 0;
 }
 
+.view-more {
+    margin: 0 auto;
+}
 
+.view-more a{
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 0.85rem;
+    padding-bottom: 2rem;
+}
+
+
+/* --- FOOTER --- */
+
+.site-footer {
+    grid-column: span 3;
+
+    background: #202020;
+    color: #ECECEC;
+
+    text-align: center;
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+.site-footer h3 {
+    font-size: 0.80rem;
+    margin: 0;
+    padding-top: 2.5rem;
+}
+
+.site-footer p {
+    font-size: 0.75rem;
+    margin: 0;
+    padding-bottom: 2.5rem;
+}
 
 
 
