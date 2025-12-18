@@ -13,7 +13,7 @@ body {
 .container {
     margin-top: 3rem;
     padding: 0.5rem;
-    width: 100%;
+    width: 425px;
     background-color: white;
 
     border-radius: 3px;
@@ -66,6 +66,7 @@ button:hover {
 }
 
 .color-grid {
+    margin: 1rem 0;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-areas:
@@ -85,27 +86,22 @@ button:hover {
 
 .color-one {
     grid-area: a1;
-    background: lightcoral;
 }
 
 .color-two {
     grid-area: a2;
-    background: rgb(229, 240, 128);
 }
 
-.color-three {
+.color-three{
     grid-area: a3;
-    background: rgb(145, 240, 128);
 }
 
 .color-four {
     grid-area: a4;
-    background: rgb(163, 128, 240);
 }
 
 .color-five {
     grid-area: a5;
-    background: rgb(240, 171, 128);
 }
 
 .hex-color-one {

@@ -1,6 +1,8 @@
+<!DOCTYPE html>
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Color Scheme Generator</title>
         <link rel="stylesheet" href="index.css">
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     </head>
@@ -9,13 +11,20 @@
             <form id="get-color-scheme">
                 <input type="color" id="color-picker">
                 <select id="color-scheme">
-                    <option>Place Holder</option>
+                    <option>monochrome</option>
+                    <option>monochrome-dark</option>
+                    <option>monochrome-light</option>
+                    <option>analogic</option>
+                    <option>complement</option>
+                    <option>analogic-complement</option>
+                    <option>triad</option>
+                    <option>quad</option>
                 </select>
-                <button>Get color scheme</button>
+                <button id="get-color-btn">Get color scheme</button>
             </form>
             <div class="color-grid">
                 <div class="color-one"></div>
-                <h3 id="hex-color-one">#FFFFFF</h3>
+                <h3 id="hex-color-one"></h3>
 
                 <div class="color-two"></div>
                 <h3 id="hex-color-two"></h3>
