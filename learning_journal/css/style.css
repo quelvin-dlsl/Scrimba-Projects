@@ -120,6 +120,62 @@ nav a {
     padding-bottom: 1rem;
 }
 
+/* --- ABOUT ME --- */
+
+.about-me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: start;
+    font-family: 'Source Sans 3', sans-serif;
+
+    margin-bottom: 5rem;
+}
+
+.about-me-image {
+    width: 100%;
+    border-radius: 3px;
+}
+
+.about-me-heading {
+    font-size: 2rem;
+    line-height: 1.35;
+    letter-spacing: -0.03em;
+
+    padding-top: 2rem;
+}
+
+.about-me-intro {
+    font-weight: 400;
+}
+
+.about-me-details {
+    margin-top: 2.5rem;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+/* about-me-title */
+
+/* position: absolute;
+width: 351.22px;
+height: 114px;
+left: 20px;
+top: 294px;
+
+font-family: 'Source Sans Pro';
+font-style: normal;
+font-weight: 700;
+font-size: 34.8381px;
+line-height: 108.2%;
+letter-spacing: -0.03em;
+
+color: #151515; */
+
+
+
 /* --- ARTICLE SECTION --- */
 
 .container {
