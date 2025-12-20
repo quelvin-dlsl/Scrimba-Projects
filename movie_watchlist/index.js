@@ -24,8 +24,20 @@ document.getElementById('search-movie').addEventListener('submit', async(e) => {
 
         const html = movies.map(movie => `
             <div class="movie-card">
-                <h4>${movie.Title}</h4>
-                <h3>${movie.Year}</h3>
+                <img src="${movie.Poster}" alt="${movie.Title}">
+                <div class="movie-details">
+                    <div class="movie-card-header">
+                        <h4>${movie.Title}</h4>
+                        <i class="fa-solid fa-star"></i>
+                        <p>${movie.imdbRating}</p>
+                    </div>
+                    <div class="movie-card-details">
+                        <p>${movie.Runtime}</p>
+                        <p>${movie.Genre}</p>
+                        <i class="fa-solid fa-circle-plus" onclick="addToWatchList('${movie.imdbID}')"></i>
+                    </div>
+                    <p>${movie.Plot}</p>
+                </div>
             </div>`).join('')
 
         document.getElementById('movie-list').innerHTML = html

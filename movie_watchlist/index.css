@@ -1,4 +1,4 @@
-*, *::before, *::after{
+*, *::before, *::after {
     box-sizing: border-box;
 }
 
@@ -11,14 +11,10 @@ body {
     position: relative;
 }
 
+/* --- HEADER --- */
 header {
-    background: url('images/header-bg.png');
-    background-color: #0E0E0E;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    background: url('images/header-bg.png') center / cover no-repeat #0E0E0E;
     height: 30vh;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -33,21 +29,23 @@ header {
 
 .my-watchlist {
     color: white;
-    text-decoration: white;
     font-size: 0.85rem;
     font-weight: 600;
     padding-right: 2rem;
+
+    text-decoration: none;
 }
 
+/* --- SEARCH FORM --- */
 form {
     position: absolute;
-    height: 2rem;
-
     top: 30vh;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
+
     width: 80%;
+    height: 2rem;
 
     display: flex;
     justify-content: space-between;
@@ -56,35 +54,24 @@ form {
     background: white;
     border: 1px solid #9CA3AF;
     border-radius: 6px;
-    /* padding: 0.25rem; */
 }
 
-input, .search-btn {
+input,
+.search-btn {
     height: 100%;
     border: 0;
 }
 
-i{
-    color: #9CA3AF;
-    font-size: 0.75rem;
-    margin-left: 0.75rem;
-    margin-right: 0.75rem;
-}
-
 input {
-    height: 100%;
     width: 100%;
-
     color: #9CA3AF;
     border-right: 1px solid #9CA3AF;
 }
 
-
 form button {
-    height: 100%;
     width: 30%;
-    border-top-right-radius: 6px;
-    border-bottom-right-radius: 6px;
+    height: 100%;
+    border-radius: 0 6px 6px 0;
     padding: 0 1.5rem;
     color: #374151;
 }
@@ -94,38 +81,93 @@ button:hover {
     background: rgb(152, 152, 152);
 }
 
+i {
+    color: #9CA3AF;
+    font-size: 0.75rem;
+    margin: 0 0.75rem;
+}
+
+/* --- MAIN CONTENT --- */
 main {
     height: 70vh;
     background: #f0f0f0;
+    padding-top: 2rem;
 }
 
+/* --- MOVIE LIST --- */
+#movie-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem;
+}
 
+.movie-card {
+    width: 90vw;
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: center;
+}
+
+.movie-card img {
+    max-width: 100%;
+    height: 160px;
+    margin: auto 0;
+}
+
+.movie-card p {
+    font-size: 0.75rem;
+}
+
+.movie-details {
+    margin-left: 1rem;
+}
+
+.movie-card-header,
+.movie-card-details {
+    overflow-wrap: break-word;
+}
+
+.movie-card-header {
+    display: flex;
+    align-items: center;
+}
+
+.movie-card-header p {
+    margin: auto 0;
+}
+
+.movie-card-details {
+    display: flex;
+    align-items: center;
+    font-size: 0.7rem;
+}
+
+.movie-card-details i {
+    font-size: 2rem;
+    margin-left: auto;
+}
+
+/* --- MEDIA QUERIES --- */
 @media (min-width: 599px) {
-    form {
-        height: 2rem;
-    }
-
     input {
         font-size: 0.85rem;
     }
 
     .site-heading {
-        margin: 0;
-        color: white;
         font-size: 2.5rem;
         padding-left: 3rem;
-        font-weight: 1000;
     }
 
     .my-watchlist {
-        color: white;
-        text-decoration: white;
-        font-size: 0.85rem;
-        font-weight: 600;
         padding-right: 3rem;
     }
 }
-
 
 @media (min-width: 769px) {
     form {
@@ -137,18 +179,10 @@ main {
     }
 
     .site-heading {
-        margin: 0;
-        color: white;
-        font-size: 2.5rem;
         padding-left: 5rem;
-        font-weight: 1000;
     }
 
     .my-watchlist {
-        color: white;
-        text-decoration: white;
-        font-size: 0.85rem;
-        font-weight: 600;
         padding-right: 5rem;
     }
 }
