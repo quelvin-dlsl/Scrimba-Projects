@@ -15,15 +15,20 @@ body {
 header {
     background: url('images/header-bg.png') center / cover no-repeat #0E0E0E;
     height: 30vh;
+    padding: 0 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+header a:hover {
+    opacity: 70%;
+}
+
 .site-heading {
+    font-size: 1.5rem;
     margin: 0;
     color: white;
-    padding-left: 2rem;
     font-weight: 1000;
 }
 
@@ -31,7 +36,6 @@ header {
     color: white;
     font-size: 0.85rem;
     font-weight: 600;
-    padding-right: 2rem;
 
     text-decoration: none;
 }
@@ -76,9 +80,10 @@ form button {
     color: #374151;
 }
 
-button:hover {
+form button:hover {
     color: whitesmoke;
     background: rgb(152, 152, 152);
+    cursor: pointer;
 }
 
 i {
@@ -90,7 +95,6 @@ i {
 /* --- MAIN CONTENT --- */
 main {
     height: 70vh;
-    background: #f0f0f0;
     padding-top: 2rem;
 }
 
@@ -106,10 +110,12 @@ main {
 }
 
 .movie-card {
-    width: 90vw;
+    width: 100%;
     padding: 1rem 1.5rem;
     display: flex;
     flex-direction: row;
+
+    border-bottom: 1px solid #9CA3AF;
 }
 
 .movie-card img {
@@ -124,6 +130,11 @@ main {
 
 .movie-details {
     margin-left: 1rem;
+    width: 100%;
+}
+
+.movie-details p {
+    max-width: 40vw;
 }
 
 .movie-card-header,
@@ -136,8 +147,16 @@ main {
     align-items: center;
 }
 
+.movie-card-header h4 {
+    font-weight: 600;
+}
+
 .movie-card-header p {
     margin: auto 0;
+}
+
+.movie-card-header i {
+    color: #FEC654;
 }
 
 .movie-card-details {
@@ -146,9 +165,30 @@ main {
     font-size: 0.7rem;
 }
 
-.movie-card-details i {
-    font-size: 2rem;
+.movie-card-details button i {
+    font-size: 1.25rem;
+    padding-right: 0.35rem;
     margin-left: auto;
+    margin-right: 0;
+
+    color: black;
+}
+
+.genre {
+    padding: 0 0.35rem;
+}
+
+#add-watch-list {
+    display: flex;
+    align-items: center;
+
+    border: 0;
+    background-color: inherit;
+}
+
+.movie-card-details button:hover {
+    opacity: 60%;
+    cursor: pointer;
 }
 
 /* --- MEDIA QUERIES --- */
@@ -159,15 +199,27 @@ main {
 
     .site-heading {
         font-size: 2.5rem;
-        padding-left: 3rem;
     }
 
-    .my-watchlist {
-        padding-right: 3rem;
+    .movie-card {
+        justify-content: center;
+    }
+
+    .movie-details {
+        width: 45%;
     }
 }
 
 @media (min-width: 769px) {
+
+    header {
+        padding: 0 5rem;
+    }
+
+    .my-watchlist {
+        font-size: 1.25rem;
+    }
+
     form {
         height: 3rem;
     }
@@ -176,11 +228,43 @@ main {
         font-size: 1rem;
     }
 
-    .site-heading {
-        padding-left: 5rem;
+    .movie-card {
+        width: 80vw;
+        padding: 2rem 1.5rem;
+        display: flex;
+        flex-direction: row;
     }
 
-    .my-watchlist {
-        padding-right: 5rem;
+    .movie-card p {
+        font-size: 0.9rem;
+    }
+
+    .movie-card img {
+        max-width: 100%;
+        height: 360px;
+        margin: auto 0;
+    }
+
+    .movie-card-header {
+        display: flex;
+        align-items: center;
+    }
+
+    .movie-card-header h4 {
+        font-weight: 600;
+        font-size: 2rem;
+    }
+
+    .movie-card-header p {
+        font-size: 1.25rem;
+        margin: auto 0;
+    }
+
+    .movie-card-details p {
+        font-size: 1rem;
+    }
+
+    .movie-details {
+        line-height: 2;
     }
 }

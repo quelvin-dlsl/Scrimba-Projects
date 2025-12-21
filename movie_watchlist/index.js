@@ -1,5 +1,4 @@
 // My API key:  8fbb449d
-import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
 
 document.getElementById('search-movie').addEventListener('submit', async(e) => {
     e.preventDefault();
@@ -33,8 +32,11 @@ document.getElementById('search-movie').addEventListener('submit', async(e) => {
                     </div>
                     <div class="movie-card-details">
                         <p>${movie.Runtime}</p>
-                        <p>${movie.Genre}</p>
-                        <i class="fa-solid fa-circle-plus" onclick="addToWatchList('${movie.imdbID}')"></i>
+                        <p class="genre">${movie.Genre}</p>
+                        <button id="add-watch-list"  onclick="addToWatchList('${movie.imdbID}')">
+                            <i class="fa-solid fa-circle-plus"></i>
+                            <p>Watchlist</p>
+                        </button>
                     </div>
                     <p>${movie.Plot}</p>
                 </div>
