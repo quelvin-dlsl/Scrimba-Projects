@@ -178,7 +178,7 @@ main {
     padding: 0 0.35rem;
 }
 
-#add-watch-list {
+.add-watch-list, .remove-watch-list {
     display: flex;
     align-items: center;
 

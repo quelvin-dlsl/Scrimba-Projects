@@ -33,7 +33,7 @@ document.getElementById('search-movie').addEventListener('submit', async(e) => {
                     <div class="movie-card-details">
                         <p>${movie.Runtime}</p>
                         <p class="genre">${movie.Genre}</p>
-                        <button id="add-watch-list"  onclick="addToWatchList('${movie.imdbID}')">
+                        <button data-imdb-id="${movie.imdbID}"  class="add-watch-list">
                             <i class="fa-solid fa-circle-plus"></i>
                             <p>Watchlist</p>
                         </button>
@@ -47,3 +47,23 @@ document.getElementById('search-movie').addEventListener('submit', async(e) => {
         console.log('Error fetching movies: ', error)
     }
 })
+
+document.getElementById('movie-list').addEventListener('click', (e) => {
+    const button = e.target.closest('.add-watch-list');
+    if (button) {
+        const imdbID = button.dataset.imdbId;
+        addToWatchList(imdbID);
+    }
+})
+
+function addToWatchList(imdbID) {
+    let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
+
+    if (!watchlist.includes(imdbID)) {
+        watchlist.push(imdbID);
+        localStorage.setItem('watchlist', JSON.stringify(watchlist));
+        alert('Movie added to watchlist!');
+    } else {
+        alert('Movie already in watchlist!');
+    }
+}
