@@ -2,8 +2,10 @@
 
 A fully functional restaurant ordering application with a shopping cart, checkout modal, and form validation. Built with vanilla JavaScript and ES6 modules.
 
-![Restaurant Ordering App Screenshot](/screenshot.png)
-![Restaurant Ordering App Screenshot](/screenshot1.png)
+<div style="display: flex">
+  <img src="screenshot.png" style="width: 300px;">
+  <img src="screenshot1.png" style="width: 300px; ">
+</div>
 
 ## Features
 
