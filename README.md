@@ -77,7 +77,7 @@ Data from The Open Movie Database API (opendbapi.com)
 | 4 | [Leads Extension](leads_extension) | Browser extension to keep track of leads | HTML, CSS, JS, JSON, WebExtension |
 | 5 | [Restaurant Ordering App](restaurant_ordering_app) | Jimmy's Diner Order Simple App | HTML, CSS, JS |
 | 6 | [Instagram Clone](instagram_clone) | Instagram Clone | HTML, CSS, JS |
-| 7 | [Learning Journal](learning_journal) | A responsive learning journal website | HTML, CSS, JS |
+| 7 | [Learning Journal](learning_journal) | A responsive learning journal website | HTML, CSS |
 | 8 | [Color Scheme Generator](color_scheme_generator) | Color Scheme Generator | HTML, CSS, JS |
 | 9 | [Movie Wathclist](movie_watchlist) | Save your movies in your watchlist | HTML, CSS, JS, API Integration |
 
