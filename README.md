@@ -67,7 +67,7 @@ Data from The Open Movie Database API (opendbapi.com)
 
 ---
 
-## 📋 All Projects
+## All Projects
 
 | # | Project Name | Description | Tech Stack |
 |---|--------------|-------------|------------|
@@ -81,13 +81,13 @@ Data from The Open Movie Database API (opendbapi.com)
 | 8 | [Color Scheme Generator](color_scheme_generator) | Color Scheme Generator | HTML, CSS, JS |
 | 9 | [Movie Wathclist](movie_watchlist) | Save your movies in your watchlist | HTML, CSS, JS, API Integration |
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
-## 🚀 Getting Started
+## Getting Started
 
 To run any project locally:
 
