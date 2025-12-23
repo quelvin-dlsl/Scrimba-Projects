@@ -2,9 +2,13 @@
 
 A fully responsive personal blog/learning journal website showcasing modern CSS layout techniques including CSS Grid and Flexbox. Features mobile-first design with tablet and desktop breakpoints.
 
-![Learning Journal Screenshot](screenshot1.png)
-![Learning Journal Screenshot](screenshot2.png)
-![Learning Journal Screenshot](screenshot3.png)
+<div style="display: flex; flex-direction: column;">
+  <div style="display: flex">
+    <img src="screenshot1.png" style="width: 270px">
+    <img src="screenshot2.png" style="width: 490px">
+  </div>
+  <img src="screenshot3.png" style="width:760px">
+</div>
 
 ## Features
 
