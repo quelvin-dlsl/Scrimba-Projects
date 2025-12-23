@@ -2,7 +2,7 @@
 
 A dynamic basketball scoreboard application that tracks scores for home and guest teams across four quarters with an interactive buttons
 
-## 🎯 Features
+## Features
 
 - **Score Tracking:** Track points for both HOME and GUEST teams
 - **Multiple Point Values:** Add 1, 2, or 3 points per score (free throws, field goals, and three-pointers)
