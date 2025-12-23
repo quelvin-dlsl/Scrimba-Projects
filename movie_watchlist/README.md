@@ -3,8 +3,8 @@
 A movie search application that lets you find films using the OMDB API and save your favorites to a personal watchlist.
 
 <div style="display: flex;">
-  <img src="screenshot1.png">
-  <img src="screenshot2.png">
+  <img src="screenshot1.png" style="width:240px">
+  <img src="screenshot2.png" style="width:240px">
 </div>
 
 ## Features
