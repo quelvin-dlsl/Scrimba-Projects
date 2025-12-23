@@ -2,7 +2,7 @@
 
 A fully functional Instagram clone featuring classic artist posts with interactive likes, double-tap functionality, and a feed layout. Built with vanilla JavaScript and ES6 modules.
 
-![Instagram Clone Screenshot](instagram_clone/screenshot.png)
+![Instagram Clone Screenshot](screenshot.png)
 
 ## Features
 
