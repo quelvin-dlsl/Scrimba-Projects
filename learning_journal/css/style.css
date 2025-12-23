@@ -135,6 +135,8 @@ nav a {
 .avatar {
     display: block;
     margin: 0 auto;
+    width: 182px;
+    border-radius: 50%;
 }
 
 .about-me-image {
