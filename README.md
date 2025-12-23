@@ -1,4 +1,4 @@
-# Scrimba Projects Portfolio (2025 - present)
+# Scrimba Projects Portfolio (In Progress)
 
 Welcome to my collection of projects from the [Scrimba](https://scrimba.com) Fullstack development path course! This repository showcases my journey learning web development through hands-on projects.
 
