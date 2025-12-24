@@ -1,0 +1,24 @@
+{
+  "name": "golddigger",
+  "version": "1.0.0",
+  "description": "A real-time gold investment application with live price updates",
+  "main": "server/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "nodemon server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gold",
+    "investment",
+    "nodejs",
+    "sse",
+    "real-time"
+  ],
+  "author": "Your Name",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
