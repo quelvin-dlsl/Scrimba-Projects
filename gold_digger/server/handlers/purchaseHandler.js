@@ -15,15 +15,25 @@ class PurchaseHandler {
                 const purchaseData = JSON.parse(body)
                 const { amount } = purchaseData
 
-                if (!amount || amount <= 0) {
+                const numericAmount = parseFloat(amount)
+
+                if (!amount || isNaN(numericAmount) || numericAmount <= 0) {
+                    console.error('Invalid amount:', amount)
                     this.sendError(res, 'Invalid amount', 400)
                     return
                 }
 
-                const ounces = (amount / currentPrice).toFixed(4)
+                if (!currentPrice || currentPrice <= 0){
+                    console.error('Invalid Price:', currentPrice)
+                    this.sendError(res, 'Price data unavailable', 503)
+                    return
+                }
+
+                const ounces = (numericAmount / currentPrice).toFixed(4)
+                console.log(`Calculation: £${numericAmount} ÷ £${currentPrice}/oz = ${ounces} oz`)
 
                 this.purchaseLogger.logPurchase({
-                    amount,
+                    amount: numericAmount,
                     PricePerOunce: currentPrice,
                     ounces,
                     timestamp: new Date().toISOString()
@@ -32,11 +42,12 @@ class PurchaseHandler {
                 this.sendSuccess(res, {
                     success: true,
                     ounces,
-                    amount,
+                    amount: numericAmount,
                     pricePerOunce: currentPrice
                 })
             } catch (error) {
                 console.error('Purchase processing error:', error)
+                console.error('Request bod:', body)
                 this.sendError(res, 'Invalid request data', 400)
             }
         })

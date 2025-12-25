@@ -1,3 +1,4 @@
+// services/purchaseLogger.js - Event Emitter for logging purchases to file
 
 import { EventEmitter } from 'node:events';
 import fs from 'node:fs';
@@ -25,58 +26,89 @@ class PurchaseLogger extends EventEmitter {
       this.writeToLog(data);
     });
 
-    console.log(`Purchase logger initialized`);
-    console.log(`Log file: ${this.logFile}`);
+    console.log(`📝 Purchase logger initialized`);
+    console.log(`📁 Log file: ${this.logFile}`);
   }
 
+  /**
+   * Initialize log file and directory
+   */
   initializeLogFile() {
     // Create data directory if it doesn't exist
     if (!fs.existsSync(this.dataDir)) {
       fs.mkdirSync(this.dataDir, { recursive: true });
-      console.log(`Created data directory: ${this.dataDir}`);
+      console.log(`📂 Created data directory: ${this.dataDir}`);
     }
 
     // Create log file with header if it doesn't exist
     if (!fs.existsSync(this.logFile)) {
       const header = this.createLogHeader();
       fs.writeFileSync(this.logFile, header);
-      console.log(`Created log file: ${this.logFile}`);
+      console.log(`📄 Created log file: ${this.logFile}`);
     }
   }
 
+  /**
+   * Create formatted log header
+   * @returns {string} Log header
+   */
   createLogHeader() {
     return '=== GoldDigger Purchase Log ===\n' +
            'Format: [Timestamp] | Amount: £X.XX | Price/oz: £X.XX | Ounces: X.XXXX\n' +
            '='.repeat(80) + '\n\n';
   }
 
+  /**
+   * Emit a purchase event
+   * @param {object} purchaseData - Purchase information
+   */
   logPurchase(purchaseData) {
     this.emit('purchase', purchaseData);
   }
 
+  /**
+   * Format purchase data for logging
+   * @param {object} data - Purchase data
+   * @returns {string} Formatted log entry
+   */
   formatLogEntry(data) {
     const { amount, pricePerOunce, ounces, timestamp } = data;
 
-    return `[${timestamp}] | Amount: £${amount.toFixed(2)} | ` +
-           `Price/oz: £${pricePerOunce.toFixed(2)} | ` +
-           `Ounces: ${ounces}\n`;
+    // Ensure all values are valid numbers
+    const safeAmount = parseFloat(amount) || 0;
+    const safePrice = parseFloat(pricePerOunce) || 0;
+    const safeOunces = parseFloat(ounces) || 0;
+
+    return `[${timestamp}] | Amount: £${safeAmount.toFixed(2)} | ` +
+           `Price/oz: £${safePrice.toFixed(2)} | ` +
+           `Ounces: ${safeOunces}\n`;
   }
 
+  /**
+   * Write purchase data to log file
+   * @param {object} data - Purchase data
+   */
   writeToLog(data) {
+    console.log('📝 Writing to log:', data);
+
     const logEntry = this.formatLogEntry(data);
 
     // Append to file
     fs.appendFile(this.logFile, logEntry, (err) => {
       if (err) {
-        console.error('Error writing to log file:', err);
+        console.error('❌ Error writing to log file:', err);
         this.emit('error', err);
       } else {
-        console.log(`Purchase logged: £${data.amount.toFixed(2)} → ${data.ounces} oz`);
+        console.log(`✅ Purchase logged: £${parseFloat(data.amount).toFixed(2)} → ${data.ounces} oz`);
         this.emit('logged', data);
       }
     });
   }
 
+  /**
+   * Read all purchases from log file
+   * @returns {Promise<string>} Log file contents
+   */
   async readLog() {
     return new Promise((resolve, reject) => {
       fs.readFile(this.logFile, 'utf-8', (err, data) => {
@@ -89,6 +121,11 @@ class PurchaseLogger extends EventEmitter {
     });
   }
 
+  /**
+   * Parse purchase line from log
+   * @param {string} line - Log line
+   * @returns {object|null} Parsed purchase data
+   */
   parsePurchaseLine(line) {
     const amountMatch = line.match(/Amount: £([\d.]+)/);
     const ouncesMatch = line.match(/Ounces: ([\d.]+)/);
@@ -103,6 +140,10 @@ class PurchaseLogger extends EventEmitter {
     return null;
   }
 
+  /**
+   * Get purchase statistics
+   * @returns {Promise<object>} Purchase statistics
+   */
   async getStats() {
     try {
       const logData = await this.readLog();
